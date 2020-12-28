@@ -13,23 +13,4 @@ jobs:
           echo Hello World
           java -version
           javac -version
-          
-  calcadd:
-    runs-on: ubuntu-latest
-    container: openjdk
-    steps:
-      - uses: actions/checkout@v2
-      - name: Test Calculator Add
-        run: |
-          javac *.java
-          java -ea TestAdd
-      
-  calcsub:
-    runs-on: ubuntu-latest
-    container: openjdk
-    steps:
-      - uses: actions/checkout@v2
-      - name: Test Calculator Subtract
-        run: |
-          javac *.java
-          java -ea TestSub
+          javac *.java 
