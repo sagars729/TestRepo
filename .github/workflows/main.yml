@@ -13,4 +13,24 @@ jobs:
           echo Hello World
           java -version
           javac -version
-          javac *.java 
+          javac -cp "junit-4.10.jar:." *.java
+
+  calcadd:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Calculator Add
+        run: |
+          javac -cp "junit-4.10.jar:." *.java
+          java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestAdd
+  
+  calcsub:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test Calculator Sub
+        run: |
+          javac -cp "junit-4.10.jar:." *.java
+          java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestSub
